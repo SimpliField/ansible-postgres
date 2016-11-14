@@ -22,4 +22,4 @@ docker-requirements:
 docker-test-syntax:
 	docker exec --tty "$(shell cat ${docker-container-id})" env TERM=xterm ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml --syntax-check
 docker-test-role:
-	docker exec "$(shell cat ${docker-container-id})" ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml
+	docker exec "$(shell cat ${docker-container-id})" ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml -e "$(ROLE_OPTIONS)"
