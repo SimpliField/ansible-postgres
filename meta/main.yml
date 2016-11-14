@@ -21,3 +21,4 @@ dependencies:
 - role: SimpliField.packages
   packages:
   - ca-certificates
+  - python-psycopg2
