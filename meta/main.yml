@@ -1,0 +1,23 @@
+galaxy_info:
+  author: Sébastien Elet
+  description: Setup postgres
+  company: SimpliField
+  license: license (GPLv2, CC-BY, etc)
+  min_ansible_version: 2
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+    - utopic
+    - vivid
+    - wily
+    - xenial
+  galaxy_tags:
+  - database
+  - sql
+  - postgres
+  - postgresql
+dependencies:
+- role: SimpliField.packages
+  packages:
+  - ca-certificates

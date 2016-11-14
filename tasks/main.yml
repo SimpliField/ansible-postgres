@@ -1,0 +1,8 @@
+---
+- include: install.yml
+  tags:
+  - postgres
+
+- include: configure.yml
+  tags:
+  - postgres

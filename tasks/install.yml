@@ -1,0 +1,35 @@
+---
+- name: add postgresql repository apt-key
+  apt_key:
+    id: "{{ postgresql_apt_key_id }}"
+    url: "{{ postgresql_apt_key_url }}"
+    state: present
+  when: postgresql_apt_key_url and postgresql_apt_key_id
+  tags:
+  - postgres
+
+- name: add postgresql repository
+  apt_repository:
+    repo: "{{ postgresql_apt_repository }}"
+    state: present
+  when: postgresql_apt_repository
+  register: postgresql_repo_added
+  tags:
+  - postgres
+
+- name: apt update cache
+  apt:
+    update_cache: yes
+  when: postgresql_repo_added.changed
+  tags:
+  - postgres
+
+- name: install postgresql
+  apt:
+    name: "{{item}}"
+    state: present
+  with_items:
+  - "postgresql-{{postgresql_version}}"
+  - "postgresql-client-{{postgresql_version}}"
+  - "postgresql-contrib-{{postgresql_version}}"
+
