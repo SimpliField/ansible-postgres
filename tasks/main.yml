@@ -6,3 +6,12 @@
 - include: configure.yml
   tags:
   - postgres
+
+- include: users.yml
+  tags:
+  - postgres
+
+- include: databases.yml
+  tags:
+  - postgres
+

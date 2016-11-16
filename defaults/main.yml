@@ -1,5 +1,16 @@
 ---
+postgresql_admin_user: "postgres"
 postgresql_apt_key_id: ACCC4CF8
 postgresql_apt_key_url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
 postgresql_apt_repository: 'deb http://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main {{postgresql_version}}'
+postgresql_ctype: "{{ postgresql_ctype_parts | join('.') }}"
+postgresql_ctype_parts: ['en_US', 'UTF-8']
+postgresql_database_owner: "{{ postgresql_admin_user }}"
+postgresql_databases: []
+postgresql_encoding: 'UTF-8'
+postgresql_locale: "{{ postgresql_locale_parts | join('.') }}"
+postgresql_locale_parts: ['en_US', 'UTF-8']
+postgresql_port: 5432
+postgresql_service_name: "postgresql"
+postgresql_users: []
 postgresql_version: 9.6
