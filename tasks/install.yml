@@ -12,7 +12,7 @@
   apt_repository:
     repo: "{{ postgresql_apt_repository }}"
     state: present
-  when: postgresql_apt_repository
+  when: postgresql_apt_repository is defined
   register: postgresql_repo_added
   tags:
   - postgres
