@@ -10,8 +10,9 @@ docker-pull:
 docker-run: docker-pull
 	docker run --detach \
 	--volume="${PWD}":/etc/ansible/roles/role_under_test:ro \
+	--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro \
 	$(docker-image) \
-	/sbin/init > $(docker-container-id)
+	/lib/systemd/systemd > $(docker-container-id)
 
 docker-stop:
 	docker stop $(shell cat ${docker-container-id})
