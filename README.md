@@ -1,4 +1,4 @@
-Postgres
+Postgres [![Build Status](https://travis-ci.org/SimpliField/ansible-postgres.svg?branch=master)](https://travis-ci.org/SimpliField/ansible-postgres) [![Ansible Role](https://img.shields.io/ansible/role/13353.svg?maxAge=2592000)](https://galaxy.ansible.com/SimpliField/postgres/)
 =========
 
 > Setup a postgresql server
