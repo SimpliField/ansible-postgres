@@ -1,4 +1,4 @@
-docker-image="geerlingguy/docker-debian8-ansible"
+docker-image="sebastienelet/docker-debian8-ansible"
 docker-container-id:=$(shell mktemp)
 idempotence:=$(shell mktemp)
 
